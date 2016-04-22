@@ -29,11 +29,8 @@
     <!-- Navigation -->
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="http://justinjameslee.github.io">Home</a>
-      {% for page in site.pages %}
-        {% if page.title %}
-          <a class="mdl-navigation__link" href="{{ page.url | replace_first: '/', '' | prepend: site.baseurl | prepend: site.url }}">{{ page.title }}</a>
-        {% endif %}
-      {% endfor %}
+      <a class="mdl-navigation__link" href="http://justinjameslee.github.io/about/">About</a>
+      <a class="mdl-navigation__link" href="http://justinjameslee.github.io/categories.html">Categories</a>
     </nav>
   </div>
 </header>
