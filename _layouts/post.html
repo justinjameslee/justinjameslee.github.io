@@ -51,10 +51,7 @@ comments: true
        var disqus_shortname = '{{ site.disqus_shortname }}';
        var disqus_url = '{{ page.url | replace_first: '/', '' | prepend: site.baseurl | prepend: site.url }}';
        var disqus_title = '{{ page.title }}';
-       
-       var disqus_config = function () {
-       this.page.identifier = First Post; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
+       var disqus_identifier = "{{ page.url }}";
  
        /* * * DON'T EDIT BELOW THIS LINE * * */
        (function() {
