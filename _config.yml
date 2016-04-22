@@ -23,6 +23,7 @@ email: justinlee@legacytech.tk
 email_md5: 90ec72d85fafcdb600d32999026b653d # md5 hash of your email
 twitter_username: Legacy477
 github_username: justinjameslee
+disqus_shortname: justinjameslee
 
 # Theming options
 # These settings are mandatory.

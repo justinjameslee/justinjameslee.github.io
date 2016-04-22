@@ -5,7 +5,6 @@ comments: true
 <div class="post">
   <header>
     <h5 class="subheader">
-    <span>
       {% assign d = page.date | date: "%d" | plus:'0' %}
       {{ page.date | date: "%B" }}
       {% case d %}
@@ -15,8 +14,6 @@ comments: true
       {% else %}{{ d }}th,
       {% endcase %}
       {{ page.date | date: "%Y" }}
-      <span class="disqus-comment-count" data-disqus-identifier="article_1_identifier">First article</span>
-    </span>
     </h5>
     <h1>{{ page.title }}</h1>
     <!-- Categories -->
