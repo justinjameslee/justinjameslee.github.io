@@ -2,7 +2,7 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = 'justinjameslee';
-    var disqus_identifier = "{{ page.url }}";
+    var disqus_identifier = "{{ page.url | prepend: site.url }}";
     var disqus_url = '{{ page.url | prepend: site.url }}';
     var disqus_title = '{{ page.title }}';
     /* * * DON'T EDIT BELOW THIS LINE * * */
