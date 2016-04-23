@@ -48,7 +48,7 @@ if(isset($_POST['action'])) {
         echo 'alert("Error, please go back and check you have filled in all the required(*) fields.")';
         echo '</script>';
         echo '<script language="javascript">';
-        echo 'window.location = "http://legacytech.tk"';
+        echo 'window.location = "http://legacy47.tk"';
         echo '</script>';
     }
     
