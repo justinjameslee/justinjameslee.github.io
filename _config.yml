@@ -9,8 +9,13 @@ url: "http://justinjameslee.github.io" # the base hostname & protocol for your s
 markdown: kramdown
 paginate: 5 # pagination based on number of posts
 paginate_path: "page/:num"
-highlighter: pygments
 gems: [jekyll-paginate]
+
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge
+
+
 
 # comments
 disqus: # add disqus shortname here
