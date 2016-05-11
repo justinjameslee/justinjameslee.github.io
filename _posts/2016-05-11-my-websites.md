@@ -2,7 +2,7 @@
 layout: post
 comments: true
 title:  "My Websites"
-date:   2016-04-23
+date:   2016-05-11
 categories: Documentation
 ---
 
@@ -17,5 +17,14 @@ My Websites:
     <li><a href="http://www.goldlineit.com.au">http://www.goldlineit.com.au</a></li>
     <li><a href="http://justinjameslee.github.io">http://justinjameslee.github.io</a></li>
 </ul>
+
+So, firstly what they do.
+
+1. http://legacy47.tk | 'Repository' or my public projects.
+2. http://onefud.legacy47.tk | Collaboration project made with complete custom css
+3. http://cgstournament.legacy47.tk | Late tournament details and past event.
+4. http://legacytech.tk | More formal version of legacy47.tk
+5. http://www.goldlineit.com.au | Finished product with first client
+6. http://justinjameslee.github.io | This website :^)
 
 Be sure to check them if you have time!
