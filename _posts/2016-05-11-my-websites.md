@@ -18,13 +18,18 @@ My Websites:
     <li><a href="http://justinjameslee.github.io">http://justinjameslee.github.io</a></li>
 </ul>
 
-So, firstly what they do.
+So, firstly why did I make these..
 
-1. http://legacy47.tk | 'Repository' or my public projects.
-2. http://onefud.legacy47.tk | Collaboration project made with complete custom css
-3. http://cgstournament.legacy47.tk | Late tournament details and past event.
-4. http://legacytech.tk | More formal version of legacy47.tk
-5. http://www.goldlineit.com.au | Finished product with first client
-6. http://justinjameslee.github.io | This website :^)
+Well to begin with these were mainly small projects that I had started doing alone, some of them turned out to be successful while others are still undeveloped.
+
+And what they do..
+
+<ul>
+    <li>http://legacy47.tk | 'Repository' or my public projects.
+    <li>http://onefud.legacy47.tk | Collaboration project made with complete custom css
+    <li>http://cgstournament.legacy47.tk | Late tournament details and past event.
+    <li>http://legacytech.tk | More formal version of legacy47.tk
+    <li>http://www.goldlineit.com.au | Finished product with first client
+    <li>http://justinjameslee.github.io | This website :^)
 
 Be sure to check them if you have time!
