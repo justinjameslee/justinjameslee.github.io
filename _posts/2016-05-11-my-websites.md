@@ -31,5 +31,6 @@ And what they do..
     <li>http://legacytech.tk | More formal version of legacy47.tk
     <li>http://www.goldlineit.com.au | Finished product with first client
     <li>http://justinjameslee.github.io | This website :^)
+</ul>
 
 Be sure to check them if you have time!
