@@ -13,7 +13,6 @@ My Websites:
     <li><a href="http://legacy47.tk">http://legacy47.tk</a></li>
     <li><a href="http://onefud.legacy47.tk">http://onefud.legacy47.tk</a></li>
     <li><a href="http://cgstournament.legacy47.tk">http://cgstournament.legacy47.tk</a></li>
-    <li><a href="http://legacytech.tk">http://legacytech.tk</a></li>
     <li><a href="http://www.goldlineit.com.au">http://www.goldlineit.com.au</a></li>
     <li><a href="http://justinjameslee.github.io">http://justinjameslee.github.io</a></li>
 </ul>
