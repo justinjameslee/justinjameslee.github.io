@@ -1,3 +1,85 @@
+<?php
+ 
+// grab recaptcha library
+//require_once "recaptchalib.php";
+
+// your secret key
+//$secret = "6LcDnhwTAAAAALCXJ8oQnge0bEV1K3jRQadsD_aM";
+ 
+// empty response
+//$response = null;
+ 
+// check secret key
+//$reCaptcha = new ReCaptcha($secret);
+
+// if submitted check response
+//if ($_POST["g-recaptcha-response"]) {
+   // $response = $reCaptcha->verifyResponse(
+   //     $_SERVER["REMOTE_ADDR"],
+   //     $_POST["g-recaptcha-response"]
+  //  );
+//}
+ 
+?>
+
+<?php
+ 
+if(isset($_POST['action'])) {
+ 
+ 
+    $email_to = "justinivip@gmail.com";
+ 
+    $email_from = $_POST['email']; // required
+ 
+    $message = $_POST['message']; // required
+    
+    $subject = $_POST['subject'];
+ 
+    function clean_string($string) {
+ 
+      $bad = array("content-type","bcc:","to:","cc:","href");
+ 
+      return str_replace($bad,"",$string);
+ 
+    }
+    
+    if (empty($_POST['email']) || empty($_POST['message']) || empty($_POST['subject'])) {
+        echo '<script language="javascript">';
+        echo 'alert("Error, please go back and check you have filled in all the required(*) fields.")';
+        echo '</script>';
+        echo '<script language="javascript">';
+        echo 'window.location = "http://legacy47.tk"';
+        echo '</script>';
+    }
+    
+    $email_message = "Legacy47 Contact Form.\n\n";
+    
+    $email_message .= "Form details below.\n\n";
+ 
+    $email_message .= "Email: ".clean_string($email_from)."\n";
+    
+    $email_message .= "Subject: ".clean_string($subject)."\n";
+ 
+    $email_message .= "Message: ".clean_string($message)."\n\n";
+    
+    $email_message .= "From: ".clean_string($email_from)."\n";
+    
+    $headers = 'From: '.$email_from."\r\n".
+        'Reply-To: '.$email_from."\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+    
+    if (empty($_POST['copy'])) {
+        @mail($email_to, $subject, $email_message, $headers); 
+    }
+    
+    else {
+       @mail($email_to, $subject, $email_message, $headers);  
+       @mail($email_from, $subject, $email_message, $headers); 
+    }
+     
+?>
+
+<!--Page to go to once php has been executed-->
 <!DOCTYPE HTML>
 <html lang="en">
 	<head>
@@ -113,7 +195,7 @@
                                 <p>On github you will find all of my existing coding repositorys that can be viewed for free. <br> Github Profile: '<a href="https://github.com/justinjameslee">justinjameslee</a>'</p>
                                 <img style="height: 200px; width: 200px;" src="images/youtube-grey.png" alt="Youtube"/>
 								<p>I occasionally record and upload some of my gaming videos on youtube.<br> These games include but not limited to Overwatch and Osu! <br>Youtube Channel: '<a href="https://www.youtube.com/c/Legacy47GamingHighlights">Legacy47 Gaming'</a></p>
-                                <img style="height: 200px; width: 200px;" src="images/osu.png" alt="Osu!"/>
+                                <img style="height: 200px; width: 200px;" src="images/url.png" alt="Osu!"/>
 								<p>Osu! is a free to play rhythm game that I've been involved in for about 2 years now. <br>'Rhythm is just a click away' ~Osu! <br> Osu! Profile: '<a href="http://osu.ppy.sh/u/Legacy47">Legacy47</a>'</p>
 							</section>
 
