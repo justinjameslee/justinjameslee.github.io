@@ -129,12 +129,6 @@ if(isset($_POST['action'])) {
                             <li><a href="index.html">Home</a></li>
                             <li><a href="projects.html">Projects</a></li>
                         </ul>
-						<ul>
-							<li><a href="#intro" class="active">Introduction</a></li>
-							<li><a href="#first">Programming</a></li>
-							<li><a href="#second">Social Media</a></li>
-							<li><a href="#cta">Contact</a></li>
-						</ul>
 					</nav>
 
 				<!-- Main -->
@@ -145,9 +139,8 @@ if(isset($_POST['action'])) {
 								<div class="spotlight">
 									<div class="content">
 										<header class="major">
-                                            <h2>Welcome to Legacy47's Page</h2>
+                                            <h2>Thank you for submitting you Form!</h2>
 										</header>
-										<p>Hello, I'm Justin Lee, however I am also referred to as Legacy47 which is my online handler or FiLeZekk which is my <a href="http://steamcommunity.com/id/FiLeZekk">Steam</a> Username. I enjoy programming and gaming. Here on this site you can find some completed programming projects that include but are not limited to: C#, Python, HTML/CSS, Websites, iOS Applications and some Arduino work.</p>
 										<ul class="actions">
 											<!--<li><a href="generic.html" class="button">Learn More</a></li>-->
 										</ul>
@@ -155,89 +148,6 @@ if(isset($_POST['action'])) {
 									<span class="image"><img src="images/legacy47.png" alt="" /></span>
 								</div>
 							</section>
-
-						<!-- First Section -->
-							<section id="first" class="main special">
-								<header class="major">
-									<h2>Programming</h2>
-								</header>
-								<ul class="features">
-									<li>
-										<span class="icon major style1 fa-code"></span>
-										<h3>C#</h3>
-										<p>C# (pronounced "C-sharp") is an object-oriented programming language from Microsoft that aims to combine the computing power of C++ with the programming ease of Visual Basic. C# is based on C++ and contains features similar to those of Java. C# is designed to work with Microsoft's .Net platform.</p>
-									</li>
-									<li>
-										<span class="icon major style3 fa-copy"></span>
-										<h3>HTML/CSS</h3>
-										<p>HTML (Hypertext Markup Language) and CSS (Cascading Style Sheets) are two of the core technologies for building Web pages. HTML provides the structure of the page, CSS the (visual and aural) layout, for a variety of devices. Along with graphics and scripting, HTML and CSS are the basis of building Web pages and Web Applications.</p>
-									</li>
-									<li>
-										<span class="icon major style5 fa-diamond"></span>
-										<h3>Python</h3>
-										<p>Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java.</p>
-									</li>
-								</ul>
-								<footer class="major">
-									<ul class="actions">
-										<li><a href="projects.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
-
-						<!-- Second Section -->
-							<section id="second" class="main special">
-								<header class="major">
-									<h2>Social Media</h2>
-									<p>Below I will be covering information relating to the existing connections I have with websites such as Github and Osu!</p>
-								</header>
-                                <img style="height: 200px; width: 200px;" src="images/github.png" alt="Github"/>
-                                <p>On github you will find all of my existing coding repositorys that can be viewed for free. <br> Github Profile: '<a href="https://github.com/justinjameslee">justinjameslee</a>'</p>
-                                <img style="height: 200px; width: 200px;" src="images/youtube-grey.png" alt="Youtube"/>
-								<p>I occasionally record and upload some of my gaming videos on youtube.<br> These games include but not limited to Overwatch and Osu! <br>Youtube Channel: '<a href="https://www.youtube.com/c/Legacy47GamingHighlights">Legacy47 Gaming'</a></p>
-                                <img style="height: 200px; width: 200px;" src="images/url.png" alt="Osu!"/>
-								<p>Osu! is a free to play rhythm game that I've been involved in for about 2 years now. <br>'Rhythm is just a click away' ~Osu! <br> Osu! Profile: '<a href="http://osu.ppy.sh/u/Legacy47">Legacy47</a>'</p>
-							</section>
-
-						<!-- Get Started -->
-							<section id="cta" class="main special">
-                                <div class="content">
-                                    <header class="major">
-                                        <h2>Need my services?</h2>
-                                    </header>
-                                        <p>I will dedicate myself to your needs accomplishing only your expectations, and will not stop until you are satisfied with the result. If you have an inquiry please do not hesitate to contact me through this form below.</p>
-                                </div>
-                                    <footer class="major">
-                                        <ul class="actions">
-                                            <form method="post" action="contact.php">
-											<div class="row uniform">
-                                                <div class="6u 12u$(xsmall)">
-													<input type="email" name="email" id="email" value="" placeholder="test@mailbox.com" />
-												</div>
-												<div class="6u$ 12u$(xsmall)">
-													<div class="select-wrapper">
-														<select name="category" id="subject">
-															<option value="">- Category -</option>
-															<option value="1">Question</option>
-															<option value="1">Inquire</option>
-															<option value="1">Support/Help</option>
-														</select>
-													</div>
-												</div>
-												<div class="12u$">
-													<textarea name="demo-message" id="message" placeholder="Enter your message" rows="6"></textarea>
-												</div>
-												<div class="12u$">
-													<ul class="actions">
-														<li><input type="submit" value="Send Message" class="special" /></li>
-														<li><input type="reset" value="Reset" /></li>
-													</ul>
-												</div>
-											</div>
-										</form>
-                                        </ul>
-                                    </footer>
-                                </section>
 					</div>
 
 				<!-- Footer -->
@@ -274,3 +184,8 @@ if(isset($_POST['action'])) {
 
 	</body>
 </html>
+<?php
+ 
+}
+ 
+?>
