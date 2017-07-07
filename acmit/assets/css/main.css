@@ -1251,7 +1251,7 @@
 		font-weight: 700;
 		text-transform: uppercase;
 		text-decoration: none;
-		background: #b1ddab;
+		background: #add8e6;
 		color: #fff;
 		border: 0;
 		line-height: 1em;
@@ -1648,7 +1648,7 @@
 
 	#main-wrapper {
 		background: #fff;
-		border-top: solid 5px #b1ddab;
+		border-top: solid 5px #add8e6;
 		border-bottom: solid 5px #c1cac5;
 	}
 
@@ -2000,7 +2000,7 @@
 					}
 
 					#nav li.current a {
-						background: #b1ddab;
+                        background: #add8e6;
 						color: #fff;
 					}
 
@@ -2527,7 +2527,7 @@
 						position: absolute;
 						left: 0;
 						top: 0;
-						background: #b1ddab;
+						background: #add8e6;
 						width: 44px;
 						height: 44px;
 						content: '\f0c9';
