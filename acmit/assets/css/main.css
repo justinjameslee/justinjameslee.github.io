@@ -1119,6 +1119,17 @@
 			display: inline-block;
 		}
 
+    h2.majorr {
+        position: relative;
+        border-top: solid 5px #e7eae8;
+    }
+
+        h2.majorr span {
+			background: #fff;
+			position: relative;
+			display: inline-block;
+		}
+
 	a {
 		color: #006376;
 		text-decoration: underline;
@@ -1757,10 +1768,13 @@
 						top: -0.775em;
 						padding: 0 1.5em 0 1.5em;
 					}
-
 			h3, h4 {
 				font-size: 1.25em;
 			}
+        
+            h1.major {
+                font-size: 40px;
+            }
 
 		/* Button */
 
@@ -2230,6 +2244,10 @@
 			h3 {
 				font-size: 1.25em;
 			}
+        
+        h1 {
+            font-size: 35px;
+        }
 
 		/* Section/Article */
 
