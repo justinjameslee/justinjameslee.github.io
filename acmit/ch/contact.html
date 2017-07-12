@@ -4,19 +4,81 @@
 		<title>ACMIT</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link href="assets/css/main.css" rel="stylesheet">
+        <link href="../assets/css/main.css" rel="stylesheet">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
         <!--Custom CSS-->
-        <link href="assets/css/custom.css" rel="stylesheet">
+        <link href="../assets/css/custom.css" rel="stylesheet">
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Materialize JS-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <!--Materialize-->
-        <script type="text/javascript" src="assets/js/materialize.min.js"></script>
+        <script type="text/javascript" src="../assets/js/materialize.min.js"></script>
         <!--Validate-->
         <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+            
+            $('#message').trigger('autoresize'); 
+            
+            function once(fn, context) { 
+                var result;
+
+                return function() { 
+                    if(fn) {
+                        result = fn.apply(context || this, arguments);
+                        fn = null;
+                    }
+
+                    return result;
+                };
+            }
+                
+            var error = once(function() {
+                $('<p style="color:red !important; margin-left: 30px;" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please complete the captcha.</p>" ').insertAfter("#validate");
+            });
+            
+            var error_name = once(function() {
+                 $('<p style="color:red !important; margin-left: 30px;" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please enter your name.</p>" ').insertAfter("#name");
+            })
+            
+            var error_email = once(function() {
+                 $('<p style="color:red !important; margin-left: 30px;" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please enter a valid email.</p>" ').insertAfter("#email");
+            })
+            
+            var error_message = once(function() {
+                 $('<p style="color:red !important; margin-left: 30px;" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please enter a message.</p>" ').insertAfter("#message");
+            })
+            
+            function myFunction() {
+                alert("TEST");
+            }
+            
+            window.onload = function() {
+              var recaptcha = document.forms["contact"]["g-recaptcha-response"];
+              var x_name = document.forms["contact"]["name"];
+              var x_email = document.forms["contact"]["email"];
+              var x_message = document.forms["contact"]["message"];
+              x_name.required = true;
+              x_email.required = true;
+              x_message.required = true;
+              recaptcha.required = true;
+              recaptcha.oninvalid = function(e) {
+                error();   
+              }
+              x_name.oninvalid = function(e) {
+                error_name();   
+              } 
+              x_email.oninvalid = function(e) {
+                error_email();   
+              } 
+              x_message.oninvalid = function(e) {
+                error_message();   
+              }
+            }
+        });
+        </script>
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
@@ -25,7 +87,7 @@
 				<header id="header">
 					<div class="logo container">
 						<div>
-							<h1><a href="index.html" id="logo">ACMIT AIR</a></h1>
+							<h1><a href="index.html" id="logo">ACMIT&trade; AIR</a></h1>
 							<p>not only an air filter but also an air cleaner</p>
 						</div>
 					</div>
@@ -50,7 +112,7 @@
                                 <header>
                                 <h1 class="major" style="text-align: center; font-size: 35px;"><span>CONTACT ACMIT&trade; AIR</span></h1>
                                 </header>
-                                <form class="col s12 m12 l12 section scrollspy" id="contact" method="POST" action="contact.php" name="contactForm">
+                                <form class="col s12 m12 l12 section scrollspy" id="contact" method="POST" action="../contact.php" name="contactForm">
                                 <br>
                                 <div class="row">
                                     <div class="input-field col s12 m12 l12">
@@ -131,14 +193,13 @@
 				</footer>
         </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
-
+        <!-- Scripts -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/jquery.dropotron.min.js"></script>
+        <script src="../assets/js/skel.min.js"></script>
+        <script src="../assets/js/skel-viewport.min.js"></script>
+        <script src="../assets/js/util.js"></script>
+        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+        <script src="../assets/js/main.js"></script>
 	</body>
 </html>
