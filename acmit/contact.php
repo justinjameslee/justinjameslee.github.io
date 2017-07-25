@@ -22,27 +22,13 @@ if ($_POST["g-recaptcha-response"]) {
 }
  
 ?>
-=======
-if (isset($_POST['action'])) {
-    
-    //who to send the email to  
-    $email_to = "justinivip@gmail.com";
-     
-    //Get data from form
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $email_from = $_POST['email'];
-    $phone = $_POST['phone'];
-    $email_subject = $_POST['subject'];
-    $message = $_POST['message'];
->>>>>>> origin/master
 
 <?php
  
 if(isset($_POST['action'])) {
  
  
-    $email_to = "justinivip@gmail.com";
+    $email_to = "justinjameslee5@gmail.com";
 
     
     $name = $_POST['name']; // required
@@ -69,7 +55,7 @@ if(isset($_POST['action'])) {
         echo 'alert("Error, please go back and check you have filled in all the required(*) fields.")';
         echo '</script>';
         echo '<script language="javascript">';
-        echo 'window.location = "http://www.justinjameslee.github.io/acmit/contact.html"';
+        echo 'window.location = "http://www.acmit.com.au/contact.html"';
         echo '</script>';
     }
     
