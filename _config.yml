@@ -1,34 +1,28 @@
 # Site settings
-title: Justin Lee
+title: Paper Theme
 description: > # this means to ignore newlines until "baseurl:"
-  Justin Lee's Personal Blog Page 
+  A gentle theme for Jekyll utilising material design.
 baseurl: "/" # the subpath of your site, e.g. /blog/
-url: "http://justinjameslee.github.io" # the base hostname & protocol for your site you most probably don't need to set it
+# url: "http://yourdomain.com" # the base hostname & protocol for your site you most probably don't need to set it
 
 # Build settings
 markdown: kramdown
 paginate: 5 # pagination based on number of posts
 paginate_path: "page/:num"
-gems: [jekyll-paginate]
-
-kramdown:
-    input: GFM
-    syntax_highlighter: rouge
-
-
+highlighter: pygments
+gems: [jekyll-paginate, jekyll-coffeescript]
 
 # comments
 disqus: # add disqus shortname here
 
 # author info
 # add your appropriate info here
-author: Justin # your name
-bio: Programmer and Gamer    # your bio
-email: justinlee@legacytech.tk
-email_md5: 90ec72d85fafcdb600d32999026b653d # md5 hash of your email
-twitter_username: Legacy477
-github_username: justinjameslee
-disqus_shortname: justinjameslee
+author: # your name
+bio:    # your bio
+email:
+email_md5: # md5 hash of your email
+twitter_username:
+github_username:
 
 # Theming options
 # These settings are mandatory.
