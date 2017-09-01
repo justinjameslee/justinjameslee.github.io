@@ -4,11 +4,13 @@
 		<title>ACMIT</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+        
         <link href="assets/css/main.css" rel="stylesheet">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
         <!--Custom CSS-->
         <link href="assets/css/custom.css" rel="stylesheet">
+        <link href="assets/css/range.css" rel="stylesheet">
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Materialize JS-->
@@ -18,7 +20,13 @@
         <!--Validate-->
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <script type="text/javascript">
-            function test(e) {
+            window.addEventListener('load', 
+              function() { 
+                document.getElementById("range1").disabled = true;
+                document.getElementById("range2").disabled = true;
+              }, false);
+            
+            function range_(e) {
                 if($(e).is(':checked'))
                 {
                     document.getElementById("range1").disabled = false;
@@ -28,7 +36,33 @@
                      document.getElementById("range1").disabled = true;
                 }
             }
+            function range__(e) {
+                if($(e).is(':checked'))
+                {
+                    document.getElementById("range2").disabled = false;
+                }
+                else
+                {
+                     document.getElementById("range2").disabled = true;
+                }
+            }
+            function updateQuantity_(val) 
+            {
+                document.getElementById('quantity_').textContent = val; 
+            }
+            function updateQuantity__(val) 
+            {
+                document.getElementById('quantity__').textContent = val; 
+            }
         </script>
+        <style>
+        .hide-text {
+          text-indent: 100%;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+        
+        </style>
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
@@ -92,19 +126,27 @@
                                 <div class="row">
                                     <div class="input-field col s12 m6 l3">
                                          <i class="material-icons prefix">shopping basket</i>
-                                                <input type="checkbox" id="product1" onchange="test(this)"/>
-                                                <label for="product1">Product 1</label>
-                                    </div>
+                                                <input type="checkbox" id="product1" onchange="range_(this)"/>
+                                                <label for="product1">Product 1 | Quantity x<span id="quantity_" textContent="0">0</span></label>
+                                    </div> 
                                     <div class="input-field col s12 m6 l3">
-                                                 <input type="checkbox" id="product2" />
-                                                <label for="product2">Product 2</label>
+                                        <i class="material-icons prefix"></i>
+                                                 <input type="checkbox" id="product2" onchange="range__(this)"/>
+                                                <label for="product2">Product 2 | Quantity x<span id="quantity__" textContent="0">0</span></label>
                                     </div>
                                 </div>
                                 <div class="row">
                                      <div class="input-field col s12 m6 l3">
-                                    <p class="range-field">
-                                      <input type="range" id="range1" name="range1" min="0" max="10" value="0"/>
-                                    </p>
+                                             <i class="material-icons prefix"></i>
+                                             <input type="range" name="range1" id="range1" min="0" max="5" value="0" onchange="updateQuantity_(this.value)"/>
+                                             
+                                             
+                                    </div> 
+                                    <div class="input-field col s12 m6 l3">  
+                                        <p class="range-field">
+                                            <i class="material-icons prefix"></i>
+                                            <input type="range" id="range2" min="0" max="10" value="0" onchange="updateQuantity__(this.value)"/>
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="row">
