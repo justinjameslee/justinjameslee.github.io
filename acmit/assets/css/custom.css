@@ -756,6 +756,10 @@ section {
   background-color: #82B1FF !important;
 }
 
+.main.accent-1 {
+  background-color: #add8e6 !important;
+}
+
 .blue-text.text-accent-1 {
   color: #82B1FF !important;
 }
@@ -3037,14 +3041,14 @@ img.responsive-img {
   display: inline-block;
   overflow: hidden;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-tap-highlight-color: transparent;
   vertical-align: middle;
   z-index: 1;
-  will-change: opacity, transform;
-  transition: all .3s ease-out;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
 }
 
 .waves-effect .waves-ripple {
@@ -3056,7 +3060,9 @@ img.responsive-img {
   margin-left: -10px;
   opacity: 0;
   background: rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.7s ease-out;
   transition: all 0.7s ease-out;
+  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
   transition-property: transform, opacity;
   transition-property: transform, opacity, -webkit-transform;
@@ -3101,7 +3107,13 @@ img.responsive-img {
   background: none;
 }
 
+.waves-effect img {
+  position: relative;
+  z-index: -1;
+}
+
 .waves-notransition {
+  -webkit-transition: none !important;
   transition: none !important;
 }
 
@@ -3136,7 +3148,8 @@ img.responsive-img {
   display: block;
 }
 
-a.waves-effect .waves-ripple {
+/* Firefox Bug: link not triggered */
+.waves-effect .waves-ripple {
   z-index: -1;
 }
 
@@ -3378,7 +3391,6 @@ a {
 a:active,
 a:hover {
   outline: 0;
-  color: #ff9100;
 }
 
 .collection {
@@ -4649,8 +4661,8 @@ form p:last-child {
   height: 22px;
   border-top: 2px solid transparent;
   border-left: 2px solid transparent;
-  border-right: 2px solid #add8e6;
-  border-bottom: 2px solid #add8e6;
+  border-right: 2px solid #82B1FF;
+  border-bottom: 2px solid #82B1FF;
   -webkit-transform: rotate(40deg);
           transform: rotate(40deg);
   -webkit-backface-visibility: hidden;
@@ -4672,7 +4684,7 @@ form p:last-child {
   height: 22px;
   border-top: none;
   border-left: none;
-  border-right: 2px solid #add8e6;
+  border-right: 2px solid #82B1FF;
   border-bottom: none;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
@@ -4742,8 +4754,8 @@ form p:last-child {
   top: 0;
   width: 20px;
   height: 20px;
-  border: 2px solid #add8e6;
-  background-color: #add8e6;
+  border: 2px solid #82B1FF;
+  background-color: #82B1FF;
   z-index: 0;
 }
 
@@ -4755,8 +4767,8 @@ form p:last-child {
 
 [type="checkbox"].filled-in.tabbed:checked:focus + label:after {
   border-radius: 2px;
-  background-color: #add8e6;
-  border-color: #add8e6;
+  background-color: #82B1FF;
+  border-color: #82B1FF;
 }
 
 [type="checkbox"].filled-in:disabled:not(:checked) + label:before {
