@@ -3184,7 +3184,7 @@ a.waves-effect .waves-ripple {
 .btn, .btn-large {
   text-decoration: none;
   color: #fff;
-  background-color: #26a69a;
+  background-color: #add8e6;
   text-align: center;
   letter-spacing: .5px;
   transition: .2s ease-out;
@@ -3205,7 +3205,7 @@ a.waves-effect .waves-ripple {
   height: 37px;
   line-height: 37px;
   padding: 0;
-  background-color: #26a69a;
+  background-color: #add8e6;
   border-radius: 50%;
   transition: .3s;
   cursor: pointer;
@@ -3222,7 +3222,7 @@ a.waves-effect .waves-ripple {
 }
 
 .btn-floating:hover {
-  background-color: #26a69a;
+  background-color: #add8e6;
 }
 
 .btn-floating:before {
@@ -4089,9 +4089,9 @@ input[type=tel]:not(.browser-default):focus:not([readonly]),
 input[type=number]:not(.browser-default):focus:not([readonly]),
 input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid #26a69a;
-  -webkit-box-shadow: 0 1px 0 0 #26a69a;
-          box-shadow: 0 1px 0 0 #26a69a;
+  border-bottom: 1px solid #add8e6;
+  -webkit-box-shadow: 0 1px 0 0 #add8e6;
+          box-shadow: 0 1px 0 0 #add8e6;
 }
 
 input:not([type]):focus:not([readonly]) + label,
@@ -4107,7 +4107,7 @@ input[type=tel]:not(.browser-default):focus:not([readonly]) + label,
 input[type=number]:not(.browser-default):focus:not([readonly]) + label,
 input[type=search]:not(.browser-default):focus:not([readonly]) + label,
 textarea.materialize-textarea:focus:not([readonly]) + label {
-  color: #26a69a;
+  color: #add8e6;
 }
 
 input:not([type]).valid, input:not([type]):focus.valid,
@@ -4324,7 +4324,7 @@ textarea.materialize-textarea + label:after {
 }
 
 .input-field .prefix.active {
-  color: #26a69a;
+  color: #add8e6;
 }
 
 .input-field .prefix ~ input,
@@ -4649,8 +4649,8 @@ form p:last-child {
   height: 22px;
   border-top: 2px solid transparent;
   border-left: 2px solid transparent;
-  border-right: 2px solid #26a69a;
-  border-bottom: 2px solid #26a69a;
+  border-right: 2px solid #add8e6;
+  border-bottom: 2px solid #add8e6;
   -webkit-transform: rotate(40deg);
           transform: rotate(40deg);
   -webkit-backface-visibility: hidden;
@@ -4672,7 +4672,7 @@ form p:last-child {
   height: 22px;
   border-top: none;
   border-left: none;
-  border-right: 2px solid #26a69a;
+  border-right: 2px solid #add8e6;
   border-bottom: none;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
@@ -4742,8 +4742,8 @@ form p:last-child {
   top: 0;
   width: 20px;
   height: 20px;
-  border: 2px solid #26a69a;
-  background-color: #26a69a;
+  border: 2px solid #add8e6;
+  background-color: #add8e6;
   z-index: 0;
 }
 
@@ -4755,8 +4755,8 @@ form p:last-child {
 
 [type="checkbox"].filled-in.tabbed:checked:focus + label:after {
   border-radius: 2px;
-  background-color: #26a69a;
-  border-color: #26a69a;
+  background-color: #add8e6;
+  border-color: #add8e6;
 }
 
 [type="checkbox"].filled-in:disabled:not(:checked) + label:before {
@@ -4807,7 +4807,7 @@ form p:last-child {
 }
 
 .switch label input[type=checkbox]:checked + .lever:after {
-  background-color: #26a69a;
+  background-color: #add8e6;
 }
 
 .switch label .lever {
@@ -5149,7 +5149,7 @@ select:disabled {
 }
 
 .side-nav li > a.btn-floating:hover {
-  background-color: #26a69a;
+  background-color: #add8e6;
 }
 
 .side-nav li > a > i,
