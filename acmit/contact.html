@@ -17,68 +17,6 @@
         <script type="text/javascript" src="assets/js/materialize.min.js"></script>
         <!--Validate-->
         <script src='https://www.google.com/recaptcha/api.js'></script>
-        <script type="text/javascript">
-            $(document).ready(function(){
-            
-            $('#message').trigger('autoresize'); 
-            
-            function once(fn, context) { 
-                var result;
-
-                return function() { 
-                    if(fn) {
-                        result = fn.apply(context || this, arguments);
-                        fn = null;
-                    }
-
-                    return result;
-                };
-            }
-                
-            var error = once(function() {
-                $('<p style="color:red !important; margin-left: 30px;" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please complete the captcha.</p>" ').insertAfter("#validate");
-            });
-            
-            var error_name = once(function() {
-                 $('<p style="color:red !important; margin-left: 30px;" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please enter your name.</p>" ').insertAfter("#name");
-            })
-            
-            var error_email = once(function() {
-                 $('<p style="color:red !important; margin-left: 30px;" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please enter a valid email.</p>" ').insertAfter("#email");
-            })
-            
-            var error_message = once(function() {
-                 $('<p style="color:red !important; margin-left: 30px;" class=error-captcha"><span class="glyphicon glyphicon-remove " ></span> Please enter a message.</p>" ').insertAfter("#message");
-            })
-            
-            function myFunction() {
-                alert("TEST");
-            }
-            
-            window.onload = function() {
-              var recaptcha = document.forms["contact"]["g-recaptcha-response"];
-              var x_name = document.forms["contact"]["name"];
-              var x_email = document.forms["contact"]["email"];
-              var x_message = document.forms["contact"]["message"];
-              x_name.required = true;
-              x_email.required = true;
-              x_message.required = true;
-              recaptcha.required = true;
-              recaptcha.oninvalid = function(e) {
-                error();   
-              }
-              x_name.oninvalid = function(e) {
-                error_name();   
-              } 
-              x_email.oninvalid = function(e) {
-                error_email();   
-              } 
-              x_message.oninvalid = function(e) {
-                error_message();   
-              }
-            }
-        });
-        </script>
 	</head>
 	<body class="homepage">
 		<div id="page-wrapper">
@@ -88,7 +26,7 @@
 				<div class="logo container">
 				    <div>
 				        <h1><a href="index.html" id="logo">ACMIT&trade; AIR</a></h1>
-				        <p>not only an air filter but also an air cleaner</p>
+				        <p>not just an air filter</p>
 				    </div>
 				</div>
             </header>
