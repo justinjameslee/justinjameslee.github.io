@@ -5,67 +5,106 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
         
+       
         <link href="assets/css/main.css" rel="stylesheet">
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
         <!--Custom CSS-->
         <link href="assets/css/custom.css" rel="stylesheet">
         <link href="assets/css/range.css" rel="stylesheet">
+        
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Materialize JS-->
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <!--Materialize-->
-        <script type="text/javascript" src="assets/js/materialize.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
         <!--Validate-->
         <script src='https://www.google.com/recaptcha/api.js'></script>
+        
         <script type="text/javascript">
-            window.addEventListener('load', 
-              function() { 
-                document.getElementById("range1").disabled = true;
-                document.getElementById("range2").disabled = true;
-              }, false);
             
-            function range_(e) {
-                if($(e).is(':checked'))
-                {
-                    document.getElementById("range1").disabled = false;
-                }
-                else
-                {
-                     document.getElementById("range1").disabled = true;
-                     document.getElementById("range1").value = 0;
-                     document.getElementById('quantity_').textContent = 0; 
-                }
-            }
-            function range__(e) {
-                if($(e).is(':checked'))
-                {
-                    document.getElementById("range2").disabled = false;
-                }
-                else
-                {
-                     document.getElementById("range2").disabled = true;
-                     document.getElementById("range2").value = 0;
-                     document.getElementById('quantity__').textContent = 0; 
-                }
-            }
-            function updateQuantity_(val) 
-            {
-                document.getElementById('quantity_').textContent = val; 
-            }
-            function updateQuantity__(val) 
-            {
-                document.getElementById('quantity__').textContent = val; 
-            }
         </script>
         <style>
-        .hide-text {
-          text-indent: 100%;
-          white-space: nowrap;
-          overflow: hidden;
-        }
+            .hide-text {
+              text-indent: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+            }
         
+            #item {
+                margin-left: 170px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 25px;
+            }
+            
+            #sku {
+                margin-top: 30px;
+                margin-left: 170px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 15px;
+            }
+            
+            #price {
+                margin-top: 60px;
+                margin-left: 170px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 20px;
+            }
+            
+            #label-quan {
+                margin-top: 90px;
+                margin-left: 170px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 16px;
+            }
+            
+            #quantity {
+                margin-top: 102px;
+                margin-left: 250px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 15px;
+                width: 40px;
+                height: 25px;
+                text-align: right;
+            }
+            
+            #quantity2 {
+                margin-top: 102px;
+                margin-left: 250px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 15px;
+                width: 40px;
+                height: 25px;
+                text-align: right;
+            }
+            
+            #total-product {
+                margin-top: 120px;
+                margin-left: 170px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 20px;
+            }
+            
+            #total-product2 {
+                margin-top: 120px;
+                margin-left: 170px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 20px;
+            }
+            
+            #product {
+                position: absolute;
+                top: 0px;
+            }
         </style>
 	</head>
 	<body class="homepage">
@@ -128,32 +167,58 @@
                                         <label for="phone" style="font-family: 'Open Sans Condensed', sans-serif;">TELEPHONE *</label>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s12 m6 l6">
-                                         <i class="material-icons prefix">shopping basket</i>
-                                                <input type="checkbox" id="product1" onchange="range_(this)"/>
-                                                <label for="product1" style="font-family: 'Open Sans Condensed', sans-serif;">MI-8-18KV | QUANTITY x<span id="quantity_" textContent="0">0</span></label>
-                                    </div> 
-                                    <div class="input-field col s12 m6 l6">
-                                        <i class="material-icons prefix"></i>
-                                                 <input type="checkbox" id="product2" onchange="range__(this)"/>
-                                                <label for="product2" style="font-family: 'Open Sans Condensed', sans-serif;">MI-8-18KV Pro | QUANTITY x<span id="quantity__" textContent="0">0</span></label>
-                                    </div>
-                                </div>
-                                <div class="row">
+                                 <div class="row">
                                      <div class="input-field col s12 m6 l6">
-                                             <i class="material-icons prefix"></i>
-                                             <input type="range" name="range1" id="range1" min="0" max="5" value="0" onchange="updateQuantity_(this.value)"/>
-                                             
-                                             
-                                    </div> 
-                                    <div class="input-field col s12 m6 l6">  
-                                        <p class="range-field">
-                                            <i class="material-icons prefix"></i>
-                                            <input type="range" id="range2" min="0" max="5" value="0" onchange="updateQuantity__(this.value)"/>
-                                        </p>
+                                          <div class="form-group">
+                                              <i class="material-icons prefix">shopping basket</i>
+                                              <select multiple name="mainSelect" id="mainSelect">
+                                                  <option value="" disabled>products</option>
+                                                  <option value="1">MI-8-18KV</option>
+                                                  <option value="2">MI-8-18KV Pro</option>
+                                              </select>
+                                              <label>Select Products</label>
+                                            </div>
+                                     </div>
+                                </div>
+                                <div class="row" id="product1">
+                                    <div class="input-field col s12 m12 l12">
+                                                <div>
+                                                    <input class="browser-default" id="quantity" type="number" min="1" step="1"/>
+                                                </div>
+                                                <div>
+                                                    <img id="product" src="images/ACMIT.png" height="200" style="margin-left: 30px;">
+                                                </div>
+                                                <div  style="overflow: auto;">
+                                                    <label id="item">MI-8-18KV</label>
+                                                    <label id="sku">SKU 00001</label>
+                                                    <label id="price">AUD $2,399.99</label>
+                                                    <label id="label-quan">QUANTITY x</label>
+                                                    <label id="total-product" textContent="">AUD $2,399.99</label>
+                                                </div>
+                                                <br><br><br>
+                                                    
                                     </div>
                                 </div>
+                                <div class="row" id="product2">
+                                    <div class="input-field col s12 m12 l12">
+                                                <div>
+                                                    <input class="browser-default" id="quantity2" type="number" min="1" step="1"/>
+                                                </div>
+                                                <div>
+                                                    <img id="product" src="images/ACMIT.png" height="200" style="margin-left: 30px;">
+                                                </div>
+                                                <div  style="overflow: auto;">
+                                                    <label id="item">MI-8-18KV Pro</label>
+                                                    <label id="sku">SKU 00002</label>
+                                                    <label id="price">AUD $2,999.99</label>
+                                                    <label id="label-quan">QUANTITY x</label>
+                                                    <label id="total-product2" textContent="">AUD $2,999.99</label>
+                                                </div>
+                                                <br><br><br>
+                                                    
+                                    </div>
+                                </div>
+                                <br>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">mode_edit</i>
@@ -210,14 +275,100 @@
 
 				</footer>
         </div>
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.dropotron.min.js"></script>
-        <script src="assets/js/skel.min.js"></script>
-        <script src="assets/js/skel-viewport.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-        <script src="assets/js/main.js"></script>
+        
+        <script>
+        $(document).ready(function() {
+            document.getElementById("product1").className = "row hide";
+            document.getElementById("product2").className = "row hide";
+            $('select').material_select();
+            $("#quantity").val(1);
+            $("#quantity2").val(1);
+            document.getElementById("total-product").textContent = "AUD $2,399.99";
+            document.getElementById("total-product2").textContent = "AUD $2,999.99";
+        });
+            
+            
+        function displayVals() {
+            var multiplevalues = $('#mainSelect').val()
+             if (multiplevalues != "1" && multiplevalues != "2" && multiplevalues != "1,2")
+                {
+                    document.getElementById("product1").className = "row hide";
+                    document.getElementById("product2").className = "row hide";
+                    $("#quantity").val(1);
+                    $("#quantity2").val(1);
+                    document.getElementById("total-product").textContent = "AUD $2,399.99";
+                    document.getElementById("total-product2").textContent = "AUD $2,999.99";
+                }
+            else
+                {
+                var data = multiplevalues.join(",");
+                if(data == "1")
+                    {
+                        document.getElementById("product1").className = "row";
+                        document.getElementById("product2").className = "row hide";
+                        $("#quantity2").val(1);
+                        document.getElementById("total-product2").textContent = "AUD $2,999.99";
+                    }
+                else if(data == "2")
+                    {
+                        document.getElementById("product1").className = "row hide";
+                        document.getElementById("product2").className = "row";
+                        $("#quantity").val(1);
+                        document.getElementById("total-product").textContent = "AUD $2,399.99";
+                    }
+                else if(data == "1,2")
+                    {
+                        document.getElementById("product1").className = "row";
+                        document.getElementById("product2").className = "row";
+                    }
+                }
+        }
+            
+            
+        $("select").change(displayVals);
+        displayVals();
+            
+        $("#quantity").on("input", function() {
+            var data = $("#quantity").val()
+            if(data <= 0)
+                {
+                    alert("Invalid quantity entered. Value will be reset to 1.");
+                    $("#quantity").val();
+                }
+            else
+                {
+                    var total = data * 2399.99
+                    var cut = total.toFixed(2);
+                    var sep = ReplaceNumberWithCommas(cut);
+                    document.getElementById("total-product").textContent = "AUD $" + sep;
+                }
+        })
+            
+        $("#quantity2").on("input", function() {
+            var data = $("#quantity2").val()
+            if(data <= 0)
+                {
+                    alert("Invalid quantity entered. Value will be reset to 1.");
+                    $("#quantity2").val();
+                }
+            else
+                {
+                    var total = data * 2999.99
+                    var cut = total.toFixed(2);
+                    var sep = ReplaceNumberWithCommas(cut);
+                    document.getElementById("total-product2").textContent = "AUD $" + sep;
+                }
+        })
+            
+        function ReplaceNumberWithCommas(yourNumber) {
+            //Seperates the components of the number
+            var components = yourNumber.toString().split(".");
+            //Comma-fies the first part
+            components [0] = components [0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            //Combines the two sections
+            return components.join(".");
+        }
+        </script>
         
 	</body>
 </html>

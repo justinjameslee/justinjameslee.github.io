@@ -187,13 +187,6 @@
 			animation: none !important;
 		}
 
-	select {
-		font-family: 'Open Sans', sans-serif;
-		font-weight: 400;
-		color: #6b7770;
-		font-size: 11.5pt;
-		line-height: 2em;
-	}
 
 	h1, h2, h3, h4, h5, h6 {
 		font-family: 'Open Sans Condensed', sans-serif;
@@ -636,10 +629,11 @@
 			font-weight: normal;
 			text-transform: none !important;
 		}
-
-		.icon > .label {
+   
+        .icon > .label {
 			display: none;
 		}
+
 
 /* Wrappers */
 
@@ -1124,11 +1118,6 @@
 				line-height: 1.75em;
 			}
 
-			select {
-				font-size: 10.25pt;
-				line-height: 1.75em;
-			}
-
 			h2.major {
 				margin: 0 0 2em 0;
 			}
@@ -1216,11 +1205,6 @@
 				overflow-x: hidden;
 			}
 
-			body, select {
-				line-height: 1.75em;
-				font-size: 10pt;
-				letter-spacing: 0;
-			}
 
 			h2, h3, h4, h5, h6 {
 				font-size: 1.5em;
