@@ -146,19 +146,19 @@
                                 <div class="row">
                                     <div class="input-field col s12 m12 l6">
                                         <i class="material-icons prefix">account_circle</i>
-                                        <input placeholder="John Doe" id="name" type="text" class="validate" name="name" required>
+                                        <input placeholder="John Smith" id="name" type="text" class="validate" name="name" required>
                                         <label for="name" style="font-family: 'Open Sans Condensed', sans-serif;">NAME *</label>
                                     </div>
                                     <div class="input-field col s12 m6 l6">
                                         <i class="material-icons prefix">chat</i>
-                                        <input placeholder="johndoe123" id="email" type="text" class="validate" name="wechat" required>
+                                        <input placeholder="johnsmith123" id="email" type="text" class="validate" name="wechat" required>
                                         <label for="wechat" style="font-family: 'Open Sans Condensed', sans-serif;">WECHATID *</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12 m6 l6">
                                         <i class="material-icons prefix">email</i>
-                                        <input placeholder="johndoe@exmaple.com" id="email" type="email" class="validate" name="email" required>
+                                        <input placeholder="johnsmith@example.com" id="email" type="email" class="validate" name="email" required>
                                         <label for="email" data-error="wrong" data-succes="right" style="font-family: 'Open Sans Condensed', sans-serif;">EMAIL *</label>
                                     </div>
                                     <div class="input-field col s12 m6 l6">
@@ -332,8 +332,7 @@
             var data = $("#quantity").val()
             if(data <= 0)
                 {
-                    alert("Invalid quantity entered. Value will be reset to 1.");
-                    $("#quantity").val();
+                    $("#quantity").val(1);
                 }
             else
                 {
@@ -348,8 +347,7 @@
             var data = $("#quantity2").val()
             if(data <= 0)
                 {
-                    alert("Invalid quantity entered. Value will be reset to 1.");
-                    $("#quantity2").val();
+                    $("#quantity2").val(1);
                 }
             else
                 {
