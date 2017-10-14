@@ -193,7 +193,7 @@
                                                     <label id="sku">SKU 00001</label>
                                                     <label id="price">AUD $2,399.99</label>
                                                     <label id="label-quan">QUANTITY x</label>
-                                                    <label id="total-product" textContent="">AUD $2,399.99</label>
+                                                    <label id="total-product" textContent="123">AUD $2,399.99</label>
                                                 </div>
                                                 <br><br><br>
                                                     
@@ -286,7 +286,14 @@
             document.getElementById("total-product").textContent = "AUD $2,399.99";
             document.getElementById("total-product2").textContent = "AUD $2,999.99";
         });
-            
+        
+        $("#quantity").on("input", function() {
+            quantity($("#quantity"),2399.99,1);   
+        });
+        
+        $("#quantity2").on("input", function() {
+            quantity($("#quantity2"),2999.99,2);
+        });
             
         function displayVals() {
             var multiplevalues = $('#mainSelect').val()
@@ -324,40 +331,71 @@
                 }
         }
             
-            
-        $("select").change(displayVals);
-        displayVals();
-            
-        $("#quantity").on("input", function() {
-            var data = $("#quantity").val()
+        function quantity(quan,price,number) {
+            if(number == 1) { var totals = "total-product"; }
+            else if(number == 2) { var totals = "total-product2"; }
+            var data = quan.val();
             if(data <= 0)
                 {
-                    $("#quantity").val(1);
-                }
-            else
-                {
-                    var total = data * 2399.99
+                    quan.val(1);
+                    quan.css("width","40px");
+                    var total = 1 * price;
                     var cut = total.toFixed(2);
                     var sep = ReplaceNumberWithCommas(cut);
-                    document.getElementById("total-product").textContent = "AUD $" + sep;
+                    document.getElementById(totals).textContent = "AUD $" + sep;
                 }
-        })
-            
-        $("#quantity2").on("input", function() {
-            var data = $("#quantity2").val()
-            if(data <= 0)
+            else 
                 {
-                    $("#quantity2").val(1);
-                }
-            else
-                {
-                    var total = data * 2999.99
+                    var data = quan.val();
+                    var total = data * price;
                     var cut = total.toFixed(2);
                     var sep = ReplaceNumberWithCommas(cut);
-                    document.getElementById("total-product2").textContent = "AUD $" + sep;
+                    document.getElementById(totals).textContent = "AUD $" + sep;
+                    
+                    if(data >= 1000000000) 
+                        {
+                            quan.val(999999999);
+                            var total = 999999999 * price;
+                            var cut = total.toFixed(2);
+                            var sep = ReplaceNumberWithCommas(cut);
+                            document.getElementById(totals).textContent = "AUD $" + sep;
+                        }
+                    else if(data >= 99999999)
+                        {
+                            quan.css("width","85px");
+                        }
+                    else if(data >= 999999) 
+                        {
+                            quan.css("width","70px");
+                        }
+                    else if(data >= 9999)
+                        {
+                            quan.css("width","60px");
+                        }
+                    else if(data >= 99)
+                        {
+                            quan.css("width","50px");
+                        }
+                    else if(data < 99)
+                        {
+                            quan.css("width","40px");
+                        }
+                    else if(data < 9999)
+                        {
+                            quan.css("width","50px");
+                        }
+                    else if(data < 999999)
+                        {
+                            quan.css("width","60px");
+                        }
+                    else if(data < 99999999)
+                        {
+                            quan.css("width","70px");
+                        }
                 }
-        })
+        }
             
+        $("select").change(displayVals);    
         function ReplaceNumberWithCommas(yourNumber) {
             //Seperates the components of the number
             var components = yourNumber.toString().split(".");
