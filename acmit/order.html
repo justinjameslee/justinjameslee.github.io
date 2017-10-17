@@ -230,7 +230,9 @@
                                                 </div>
                                                 
                                     </div>
+                                   
                                 </div>
+                                     <br>
                                 <div class="row" id="product2">
                                     <br><br>
                                     <div class="input-field col s12 m6 l6">
@@ -246,12 +248,12 @@
                                                     <label id="price">AUD $2,999.99</label>
                                                     <label id="label-quan">QUANTITY x</label>
                                                     <label id="total-product2" textContent="">AUD $2,999.99</label>
-                                                </div>
-                                                <br><br><br>
-                                                    
+                                        </div>
                                     </div>
-                                    <div class="input-field col s12 m2 l2"></div>
-                                    <div class="input-field col s12 m4 l4">
+                                </div>
+                                     <br><br>
+                                <div class="row" id="checkout">
+                                    <div class="input-field col s12 m6 l6">
                                         <div style="overflow: auto;">
                                             <label id="total">TOTAL</label>
                                             <label id="items" textContent="">Items: AUD $ </label>
@@ -260,8 +262,10 @@
                                         </div>
                                     
                                     </div>
+                                    
+                                    
                                 </div>
-                                <br><br><br><br>
+                                <br><br><br><br><br><br>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">mode_edit</i>
@@ -275,7 +279,7 @@
                                     <div class="input-field col s12 m6 l12 hide-on-med-and-up">
                                         <div class="g-recaptcha" data-sitekey="6Lf7iCsUAAAAAOvVavJv2-_Kzf_PM06YNE-7kP3F"></div>
                                     </div>
-                                    <div class="input-field col s12 m6 l12">
+                                    <div class="input-field col s10 m4 l12">
                                         <button class="waves-effect waves-light btn-large blue accent-1 left"
                                                 type="submit" name="action" style="margin-left: 30px; font-family: 'Open Sans Condensed', sans-serif;">Submit
                                                 <i class="material-icons right">send</i>   
@@ -322,6 +326,7 @@
         <script>
         var realprice1 = 0;
         var realprice2 = 0;
+        var multiple = "";
         $(document).ready(function() {
             document.getElementById("product1").className = "row hide";
             document.getElementById("product2").className = "row hide";
@@ -352,28 +357,42 @@
                     $("#quantity2").val(1);
                     document.getElementById("total-product").textContent = "AUD $2,399.99";
                     document.getElementById("total-product2").textContent = "AUD $2,999.99";
+                    realprice1 = 0;
+                    realprice2 = 0;
                 }
             else
                 {
-                var data = multiplevalues.join(",");
-                if(data == "1")
+                multiple = multiplevalues.join(",");
+                if(multiple == "1")
                     {
                         document.getElementById("product1").className = "row";
                         document.getElementById("product2").className = "row hide";
                         $("#quantity2").val(1);
                         document.getElementById("total-product2").textContent = "AUD $2,999.99";
+                        realprice1 = 2399.99;
+                        realprice2 = 0;
+                        document.getElementById("items").textContent = "Items: AUD $2,399.99";
+                        document.getElementById("total-price").textContent = "Total: AUD $2,399.99";
                     }
-                else if(data == "2")
+                else if(multiple == "2")
                     {
                         document.getElementById("product1").className = "row hide";
                         document.getElementById("product2").className = "row";
                         $("#quantity").val(1);
                         document.getElementById("total-product").textContent = "AUD $2,399.99";
+                        realprice1 = 0
+                        realprice2 = 2999.99;
+                        document.getElementById("items").textContent = "Items: AUD $2,999.99";
+                        document.getElementById("total-price").textContent = "Total: AUD $2,999.99";
                     }
-                else if(data == "1,2")
+                else if(multiple == "1,2")
                     {
                         document.getElementById("product1").className = "row";
                         document.getElementById("product2").className = "row";
+                        realprice1 = 2399.99;
+                        realprice2 = 2999.99;
+                        document.getElementById("items").textContent = "Items: AUD $5,399.98";
+                        document.getElementById("total-price").textContent = "Total: AUD $5,399.98";
                     }
                 }
         }
@@ -386,18 +405,15 @@
                 {
                     quan.val(1);
                     quan.css("width","40px");
-                    var total = 1 * price;
-                    var cut = total.toFixed(2);
-                    var sep = ReplaceNumberWithCommas(cut);
-                    if(number == 1) { realprice1 = cut; }
-                    else if(number == 2) {realprice2 = getComputedStyle; }
-                    document.getElementById(totals).textContent = "AUD $" + sep;
+                    if(number == 1 ){ realprice1 = 2399.99; document.getElementById(totals).textContent = "AUD $2,399.99"; }
+                    else if(number == 2){realprice2 = 2999.99; document.getElementById(totals).textContent = "AUD $2,999.99"; }
                     var intprice1 = parseFloat(realprice1)
                     var intprice2 = parseFloat(realprice2)
                     var realtotal = intprice1 + intprice2;
-                    var cutrealtotal = ReplaceNumberWithCommas(realtotal);
-                    document.getElementById("items").textContent = "Items: AUD $" + cutrealtotal;
-                    document.getElementById("total-price").textContent = "Total: AUD $" + cutrealtotal;
+                    var cutrealtotal = realtotal.toFixed(2);
+                    var seprealtotal = ReplaceNumberWithCommas(cutrealtotal);
+                    document.getElementById("items").textContent = "Items: AUD $" + seprealtotal;
+                    document.getElementById("total-price").textContent = "Total: AUD $" + seprealtotal;
                 }
             else 
                 {
@@ -411,9 +427,10 @@
                     var intprice1 = parseFloat(realprice1)
                     var intprice2 = parseFloat(realprice2)
                     var realtotal = intprice1 + intprice2;
-                    var cutrealtotal = ReplaceNumberWithCommas(realtotal);
-                    document.getElementById("items").textContent = "Items: AUD $" + cutrealtotal;
-                    document.getElementById("total-price").textContent = "Total: AUD $" + cutrealtotal;
+                    var cutrealtotal = realtotal.toFixed(2);
+                    var seprealtotal = ReplaceNumberWithCommas(cutrealtotal);
+                    document.getElementById("items").textContent = "Items: AUD $" + seprealtotal;
+                    document.getElementById("total-price").textContent = "Total: AUD $" + seprealtotal;
                     
                     if(data >= 1000000000) 
                         {
