@@ -38,6 +38,14 @@
                 font-family: 'Open Sans Condensed', sans-serif;
                 font-size: 25px;
             }
+
+            #total {
+                margin-left: 50px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 30px;
+            }
+            
             
             #sku {
                 margin-top: 30px;
@@ -54,6 +62,30 @@
                 font-family: 'Open Sans Condensed', sans-serif;
                 font-size: 20px;
             }
+            
+            #items {
+                margin-left: 50px;
+                margin-top: 30px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 20px;
+            }
+            
+            #total-price {
+                margin-left: 50px;
+                margin-top: 120px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 20px;
+            }
+            
+            #shipping {
+                margin-left: 50px;
+                margin-top: 60px;
+                display: block;
+                font-family: 'Open Sans Condensed', sans-serif;
+                font-size: 20px;
+            }   
             
             #label-quan {
                 margin-top: 90px;
@@ -168,7 +200,7 @@
                                     </div>
                                 </div>
                                  <div class="row">
-                                     <div class="input-field col s12 m6 l6">
+                                     <div class="input-field col s12 m12 l12">
                                           <div class="form-group">
                                               <i class="material-icons prefix">shopping basket</i>
                                               <select multiple name="mainSelect" id="mainSelect">
@@ -181,7 +213,8 @@
                                      </div>
                                 </div>
                                 <div class="row" id="product1">
-                                    <div class="input-field col s12 m12 l12">
+                                    <br><br>
+                                    <div class="input-field col s12 m6 l6">
                                                 <div>
                                                     <input class="browser-default" id="quantity" type="number" min="1" step="1"/>
                                                 </div>
@@ -195,12 +228,12 @@
                                                     <label id="label-quan">QUANTITY x</label>
                                                     <label id="total-product" textContent="123">AUD $2,399.99</label>
                                                 </div>
-                                                <br><br><br>
-                                                    
+                                                
                                     </div>
                                 </div>
                                 <div class="row" id="product2">
-                                    <div class="input-field col s12 m12 l12">
+                                    <br><br>
+                                    <div class="input-field col s12 m6 l6">
                                                 <div>
                                                     <input class="browser-default" id="quantity2" type="number" min="1" step="1"/>
                                                 </div>
@@ -217,8 +250,18 @@
                                                 <br><br><br>
                                                     
                                     </div>
+                                    <div class="input-field col s12 m2 l2"></div>
+                                    <div class="input-field col s12 m4 l4">
+                                        <div style="overflow: auto;">
+                                            <label id="total">TOTAL</label>
+                                            <label id="items" textContent="">Items: AUD $ </label>
+                                            <label id="shipping">Shipping: AUD $0.00</label>
+                                            <label id="total-price" textContent="">Total: AUD $ </label>
+                                        </div>
+                                    
+                                    </div>
                                 </div>
-                                <br>
+                                <br><br><br><br>
                                 <div class="row">
                                     <div class="input-field col s12">
                                         <i class="material-icons prefix">mode_edit</i>
@@ -277,6 +320,8 @@
         </div>
         
         <script>
+        var realprice1 = 0;
+        var realprice2 = 0;
         $(document).ready(function() {
             document.getElementById("product1").className = "row hide";
             document.getElementById("product2").className = "row hide";
@@ -285,6 +330,7 @@
             $("#quantity2").val(1);
             document.getElementById("total-product").textContent = "AUD $2,399.99";
             document.getElementById("total-product2").textContent = "AUD $2,999.99";
+
         });
         
         $("#quantity").on("input", function() {
@@ -295,6 +341,7 @@
             quantity($("#quantity2"),2999.99,2);
         });
             
+
         function displayVals() {
             var multiplevalues = $('#mainSelect').val()
              if (multiplevalues != "1" && multiplevalues != "2" && multiplevalues != "1,2")
@@ -342,7 +389,15 @@
                     var total = 1 * price;
                     var cut = total.toFixed(2);
                     var sep = ReplaceNumberWithCommas(cut);
+                    if(number == 1) { realprice1 = cut; }
+                    else if(number == 2) {realprice2 = getComputedStyle; }
                     document.getElementById(totals).textContent = "AUD $" + sep;
+                    var intprice1 = parseFloat(realprice1)
+                    var intprice2 = parseFloat(realprice2)
+                    var realtotal = intprice1 + intprice2;
+                    var cutrealtotal = ReplaceNumberWithCommas(realtotal);
+                    document.getElementById("items").textContent = "Items: AUD $" + cutrealtotal;
+                    document.getElementById("total-price").textContent = "Total: AUD $" + cutrealtotal;
                 }
             else 
                 {
@@ -350,7 +405,15 @@
                     var total = data * price;
                     var cut = total.toFixed(2);
                     var sep = ReplaceNumberWithCommas(cut);
+                    if(number == 1) { realprice1 = cut; }
+                    else if(number == 2) {realprice2 = cut; }
                     document.getElementById(totals).textContent = "AUD $" + sep;
+                    var intprice1 = parseFloat(realprice1)
+                    var intprice2 = parseFloat(realprice2)
+                    var realtotal = intprice1 + intprice2;
+                    var cutrealtotal = ReplaceNumberWithCommas(realtotal);
+                    document.getElementById("items").textContent = "Items: AUD $" + cutrealtotal;
+                    document.getElementById("total-price").textContent = "Total: AUD $" + cutrealtotal;
                     
                     if(data >= 1000000000) 
                         {
