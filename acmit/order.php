@@ -6,15 +6,30 @@ $verify=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secre
 $captcha_success=json_decode($verify);
 
 if ($captcha_success->success==false) {
-		echo "<p>You are a bot! Go away!</p>";
+        echo '<script language="javascript">';
+        echo 'alert("ERROR, please try again.")';
+        echo '</script>';
+        echo '<script language="javascript">';
+        echo 'window.location = "http://www.acmit.com.au/order.html"';
+        echo '</script>';
 	} else if ($captcha_success->success==true) {
-		echo "<p>You are not not a bot!</p>";
-	}
-
+    }
 ?>
 
-<?php
- 
+<?php  
+
+foreach($_POST['mainSelect'] as $product)
+{
+    if($product == "1")
+    {
+        $product1 = "MI-8-18KV";
+    }
+    else if($product == "2")
+    {
+        $product2 = "MI-8-18KV Pro";
+    }
+}
+
 if(isset($_POST['action'])) {
  
  
@@ -38,7 +53,7 @@ if(isset($_POST['action'])) {
  
     }
     
-    if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['wechat'])) {
+    if (empty($_POST['name']) || empty($_POST['email']) || empty($_POST['phone']) || empty($_POST['wechat']) || empty($_POST['mainSelect'])) {
         echo '<script language="javascript">';
         echo 'alert("Error, please go back and check you have filled in all the required(*) fields.")';
         echo '</script>';
@@ -51,11 +66,15 @@ if(isset($_POST['action'])) {
         $phone = "No phone number was given.";
     }
     
-    if (empty($_POST['subject'])) {
-        $email_subject = "No subject was given.";
+    if (empty($_POST['product1'])) {
+        $product1 = "Product1 not selected.";
+    }
+    
+    if (empty($_POST['product2'])) {
+        $product2 = "Product2 not selected.";
     }
  
-    $email_message = "ACMIT AIR Contact Form.\n\n";
+    $email_message = "ACMIT AIR Order Form.\n\n";
     
     $email_message .= "Form details below.\n\n";
     
@@ -65,9 +84,13 @@ if(isset($_POST['action'])) {
  
     $email_message .= "Phone: ".clean_string($phone)."\n";
     
-    $email_message .= "Subject: ".clean_string($email_subject)."\n";
+    $email_message .= "WeChatID: ".clean_string($wechat)."\n";
+    
+    $email_message .= "Product1: ".clean_string($product1)."\n";
+    
+    $email_message .= "Product2: ".clean_string($product2)."\n";
  
-    $email_message .= "Message: ".clean_string($message)."\n\n";
+    $email_message .= "Selected: ".clean_string($selected)."\n\n";
     
     $email_message .= "From: ".clean_string($email_from)."\n";
     
@@ -76,6 +99,7 @@ if(isset($_POST['action'])) {
         'X-Mailer: PHP/' . phpversion();
     
     @mail($email_to, $email_subject, $email_message, $headers);  
+
 ?>
 
 <!--Page to go to once php has been executed-->
@@ -122,7 +146,7 @@ if(isset($_POST['action'])) {
                                     <article class="box page-content">
                                        <header>
                                             <h2 style="text-align: center;">THANK YOU</h2>
-                                            <p style="text-align: center;">Thank you for contacting ACMIT&trade; AIR. We will be in touch with you very soon.</p>
+                                            <p style="text-align: center;">Thank you for ordering with ACMIT&trade; AIR. We will be in touch with you very soon.</p>
                                            <div style="text-align: center;">
                                                <a href="about.html" class="button">READ MORE ABOUT US HERE!</a>
                                            </div>
@@ -178,5 +202,5 @@ if(isset($_POST['action'])) {
 <?php
  
 }
- 
+
 ?>
